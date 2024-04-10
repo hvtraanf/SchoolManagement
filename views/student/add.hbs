@@ -1,0 +1,49 @@
+<div class="container">
+  <form action="/student/add" method="post" class="row justify-content-center" style="background-color: #e6f7ff; padding: 20px; border-radius: 5px;">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Add new student</h1>
+      <div class="form-group">
+        <label for="id">Student ID</label>
+        <input type="text" class="form-control" id="id" name="id">
+      </div>
+      <div class="form-group">
+        <label for="name">Student Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="birthYear">Student BirthYear</label>
+        <input type="number" class="form-control" id="birthYear" name="birthYear" min="2000" max="2005">
+      </div>
+      <div class="form-group">
+        <label for="gender">Student Gender</label><br>
+        Male <input type="radio" class="form-check-input" name="gender" value="Male">
+        Female <input type="radio" class="form-check-input" name="gender" value="Female">
+      </div>
+      <div class="form-group">
+        <label for="gpa">Student GPA</label>
+        <input type="number" class="form-control" id="gpa" name="gpa">
+      </div>
+      <div class="form-group">
+        <label for="image">Student Image</label>
+        <input type="url" class="form-control" id="image" name="image">
+      </div>
+      <div class="form-group">
+        <label for="city">Student City</label>
+        <select class="form-control" id="city" name="city">
+          {{#each cities }}
+            <option value="{{ name }}">{{ name }}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="class">Class Name</label>
+        <select class="form-control" id="class" name="class">
+          {{#each classes}}
+            <option value="{{ classId}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+</div>
